@@ -1,0 +1,39 @@
+.back-grnd-container {
+  background-image: url("../assets/background-image.png");
+  background-size: cover;
+  /* background: linear-gradient(grey); */
+  background-position: center;
+  height:100vh;
+}
+
+.bg-image-overlay{
+    background: linear-gradient(46deg, rgba(33, 33, 33, 0.84) 0%, rgba(66, 66, 66, 0.24) 178.98%);
+    
+}   
+
+.logo-img {
+  height: 55px;
+  margin-left:-10px;
+}
+
+.build-sub-text{
+    font-size: 19px;
+}
+
+.dash {
+  display: inline-block;
+  height: 2px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 2px;
+}
+
+.dash-lg {
+  width: 50px;
+  /* opacity:0.9; */
+}
+
+.dash-md {
+  width: 30px;
+  opacity:0.4;
+}

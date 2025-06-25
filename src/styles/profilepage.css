@@ -1,0 +1,8 @@
+.screen{
+    width:85vw;
+    height:calc(100vh - 8vh);
+    
+}
+.student_screen{
+    display:flex;
+}

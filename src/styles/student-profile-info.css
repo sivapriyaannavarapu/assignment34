@@ -1,0 +1,135 @@
+/* .student_profile {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 8px;
+
+}
+.student-profile {
+  height: 25vh;
+  width: 100%;
+}
+
+
+.custom-text-color {
+  color: #252C32;
+}
+
+.profile-image {
+  display: inline-block;
+  padding: 6px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.shadowed-profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.custom-text-color {
+  color: #252C32 ;
+}
+.custom-tab-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 4px 8px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.custom-tab-link:hover {
+  color: #0d6efd;
+}
+
+.custom-tab-link.active {
+  color: #0d6efd;
+}
+
+.custom-tab-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; 
+  left: 0;
+  width: 100%; 
+  height: 2px; 
+  background-color: #0d6efd; 
+} */
+
+.student_profile {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 8px;
+
+}
+.student-profile {
+  height: 25vh;
+  width: 100%;
+}
+.Names{
+  color:#606060;
+}
+.Names1{
+  color:#4F4F4F;
+  font-weight: 700;
+}
+.classButton{
+  background-color: #0F6CBD;
+}
+.TechnoButton{
+  background-color: #4B901F;
+}
+/*  */
+.custom-text-color {
+  color: #252C32;
+}
+
+.profile-image {
+  display: inline-block;
+  padding: 6px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.shadowed-profile-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.custom-text-color {
+  color: #4F4F4F ;
+}
+.custom-tab-link {
+  text-decoration: none;
+  color:#252C32;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 4px 8px;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.custom-tab-link:hover {
+  color: #0d6efd;
+}
+.custom-tab-link.active {
+  color: #3425FF;  
+  padding-bottom: 10px;
+}
+
+.custom-tab-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; 
+  left: 0;
+  width: 100%; 
+  height: 2px; 
+  background-color:#3425FF; 
+} 

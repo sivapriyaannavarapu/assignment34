@@ -1,0 +1,10 @@
+.student-info {
+  padding: 16px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+}
+
+.custom-toggle::after {
+  display: none !important;
+}

@@ -1,0 +1,88 @@
+.information {
+  width: 35%;
+  height: calc(100vh - 33vh);
+   overflow-y: auto; 
+  scrollbar-width: none;
+  overflow-x:hidden;
+  background-color: white;
+}
+
+.profile-card {
+  width: 99%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding-left: 0px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 10px; /* optional small space between cards */
+}
+
+/* Card Header */
+.card-header {
+  padding: 8px 12px;   /* Reduced padding */
+
+  background-color: white;
+}
+
+.section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2D2D2D;
+  margin: 0;
+  padding: 0;
+}
+
+/* Toggle Arrow Button */
+.toggle-btn {
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  color: #000;
+  padding: 0;
+  margin: 0;
+}
+
+/* Pill buttons row under collapsed header */
+.button-row {
+  padding: 6px 12px;
+  margin: 0;
+  display: flex;
+  gap: 8px;
+}
+
+/* Pill buttons */
+.custom-green  {
+  background-color: #81F9494D !important;
+  color: #4A74FD !important;
+  font-size: 13px;
+  padding: 4px 10px;
+  margin: 0;
+}
+
+.custom-pink {
+  background-color: #FF55EE4D !important;
+  color: #710062 !important;
+  font-size: 13px;
+  padding: 4px 10px;
+  margin: 0;
+}
+
+/* Opened profile content */
+.profile-info-row {
+  margin: 0;
+  padding: 10px 12px !important;
+}
+
+.profile-info-row .form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #555;
+  margin: 0;
+}
+
+.profile-info-row .form-value {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 6px 0;
+}

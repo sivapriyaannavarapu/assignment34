@@ -1,0 +1,26 @@
+.payment_information{
+   width: 35%;
+  height: calc(100vh - 33vh);
+   overflow-y: auto; 
+  scrollbar-width: none;
+  overflow-x:hidden;
+  background-color: white;
+}
+.dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-arrow.rotate {
+  transform: rotate(180deg);
+}
+.custoum-text{
+  color:#626262;
+}
+.custoum-heading{
+  font-weight: 500;
+  color:#000000;
+}
+.custoum-heading1{
+  font-weight: 400;
+  color: #2D2D2D;
+}
