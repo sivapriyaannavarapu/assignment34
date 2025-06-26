@@ -44,7 +44,7 @@
 
 /* Pill buttons row under collapsed header */
 .button-row {
-  padding: 6px 12px;
+  padding: 10px 12px;
   margin: 0;
   display: flex;
   gap: 8px;
@@ -70,7 +70,7 @@
 /* Opened profile content */
 .profile-info-row {
   margin: 0;
-  padding: 10px 12px !important;
+  padding: 10px 7px !important;
 }
 
 .profile-info-row .form-label {

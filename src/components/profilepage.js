@@ -6,7 +6,7 @@ import "../styles/profilepage.css";
 import StudentInformation from "./student-profile-module/student-profile-main";
 import PaymentInformation from "./payment-module/payments-information";
 import Payments from "./payment-module/payments";
-import StudentInfo from "./payment-module/paymentssubtab";
+import PaymentTabs from "./payment-module/paymentssubtab";
 // import PaymentInformation from "./Payments/payment-information";
 
 const Screen = () => {
@@ -18,9 +18,8 @@ const Screen = () => {
 
       <div className="student_screen p-0 gap-3">
         <Routes>
-          <Route index element={<></>} /> {/* This matches /student */}
-
-          <Route path="student-profile" element={
+          {/* <Route index element={<></>} /> This matches /student */}
+          <Route path="/" element={
             <>
               <StudentInformation />
               <Information />
@@ -29,11 +28,11 @@ const Screen = () => {
 
           <Route path="payments" element={
             <>
-            <StudentInfo />
+            <PaymentTabs/>
             <PaymentInformation/>
             </>}>
           
-            <Route path="payment" element={<Payments />} />
+            <Route path="/payments" element={<Payments />} />
             <Route path="cancellation" element={<div>Cancellation</div>} />
           </Route>
         

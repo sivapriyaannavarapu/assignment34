@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from "react";
 import { Box, Button, LinearProgress, Typography } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
@@ -10,7 +9,7 @@ import blur from "../../assets/blur.png";
 import { useDueTotal } from "../../backend/queries";
 import { useStudentContext } from "../customHooks/StudentContext";
 import { addPayment } from "../../backend/apis";
-
+ 
 const Payments = () => {
   const [paymentMode, setPaymentMode] = useState("Cash");
   const [term, setTerm] = useState("term1");
@@ -25,7 +24,7 @@ const Payments = () => {
   const { data } = useDueTotal();
   const { studentId } = useStudentContext();
   const formRef = useRef();
-
+ 
   const feeHeads = [
     { id: 1, name: "Pocket Money" },
     { id: 2, name: "Transport Fee" },
@@ -34,7 +33,7 @@ const Payments = () => {
     { id: 5, name: "Akash Books Fee" },
     { id: 6, name: "Material Fee" },
   ];
-
+ 
   const handlePaymentModeChange = (mode) => {
     setPaymentMode(mode);
     if (mode !== "DD") {
@@ -47,27 +46,42 @@ const Payments = () => {
       setStep("Step 1");
     }
   };
-
+ 
   const handleAmountChange = (e) => {
     const value = e.target.value;
     setAmount(value);
     const number = parseInt(value.replace(/[^0-9]/g, ""), 10);
     setAmountInWords(!isNaN(number) ? toWords(number) : "");
   };
-
+ 
   const addFeeItem = (feeHead) => {
+    // Check if a fee item with the same feeHeadId already exists
+    const exists = feeItems.some((item) => item.feeHeadId === feeHead.id);
+    if (exists) {
+      console.warn(`Fee head "${feeHead.name}" is already added.`);
+      setShowModal(false);
+      return;
+    }
+
+    const parsedAmount = parseInt(amount) || 0;
+    if (parsedAmount <= 0) {
+      console.warn("Amount must be greater than 0 to add a fee item.");
+      setShowModal(false);
+      return;
+    }
+ 
     const newItem = {
       amount: parseInt(amount) || 0,
       feeHeadId: feeHead.id,
-      name:feeHead.name,
+      name: feeHead.name,
       description: `Payment for ${feeHead.name}`,
     };
     setFeeItems([...feeItems, newItem]);
     setShowModal(false);
   };
-
+ 
   const handleSubmit = async () => {
-    console.log("Print Receipt button clicked"); // Debug log
+    console.log("Print Receipt button clicked");
     if (formRef.current) {
       try {
         await formRef.current.handleSubmit();
@@ -75,38 +89,56 @@ const Payments = () => {
         console.error("Error during form submission:", error);
       }
     } else {
-      console.warn("formRef is not set");
+      console.warn("formRef is not available");
     }
   };
-
+ 
   const handleFormSubmit = async (formData) => {
-    console.log("handleFormSubmit called with data:", formData); // Debug log
+    console.log("handleFormSubmit called with data:", formData);
     try {
+      // Initialize DTO fields
+      let pocketMoneyAmount = 0;
+      let akashBooksAmount = null;
+      let courseFeeAmount = parseInt(formData.amount) || 0; // Amount from PaymentForm (course fee)
+ 
+      // Process feeItems to map amounts for Pocket Money and Akash Books Fee
+      // formData.feeItems?.forEach((item) => {
+      //   if (item.name === "Pocket Money") {
+      //     pocketMoneyAmount += parseInt(item.amount) || 0;
+      //   } else if (item.name === "Akash Books Fee") {
+      //     akashBooksAmount = parseInt(item.amount) || null;
+      //   } else {
+      //     // Other fee heads contribute to courseFeeAmount (Material Fee, id: 6)
+      //     courseFeeAmount += parseInt(item.amount) || 0;
+      //   }
+      // });
+ 
       const payload = {
-        amount: parseInt(formData.amount) || 0,
+        amount: courseFeeAmount,
         class_type: "",
-        feeHeadId: formData.feeItems[0]?.feeHeadId || 6,
-        pocket_money_amount: 0,
-        modeOfPayment: formData.modeOfPayment,
+        feeHeadId: 6, // Always set to 6 (Material Fee) for course fee
+        pocket_money_amount: pocketMoneyAmount,
+        modeOfPayment: formData.modeOfPayment || paymentMode,
         pre_print_reciept_no: parseInt(formData.pre_print_reciept_no) || 0,
         bank_details: "",
         amountIn: formData.amountIn || "",
-        akashBooks: null,
+        akashBooks: akashBooksAmount,
         description: formData.description || "",
         check_no: parseInt(formData.cheque_amount) || null,
         check_date: null,
         fee_payment_year: formData.fee_payment_year || null,
       };
-      console.log("Sending payload to backend:", payload); // Debug log
+ 
+      console.log("Sending payload to backend:", payload);
       const result = await addPayment(studentId, payload);
       console.log("Payment added successfully:", result);
     } catch (error) {
       console.error("Error adding payment:", error.response?.data || error.message);
     }
   };
-
+ 
   console.log(data);
-
+ 
   return (
     <div
       className="payment"
@@ -133,18 +165,18 @@ const Payments = () => {
             borderRadius: 1,
             overflow: "hidden",
             opacity: "50%",
-            pointerEvents: "none", // Ensure backdrop doesn't block clicks
+            pointerEvents: "none",
           }}
         />
       )}
-
+ 
       <FeeHeadModal
         showModal={showModal}
         setShowModal={setShowModal}
         feeHeads={feeHeads}
         addFeeItem={addFeeItem}
       />
-
+ 
       {!showModal && (
         <>
           <div className="payments_top d-flex justify-content-between">
@@ -297,7 +329,7 @@ const Payments = () => {
                   "&:hover": {
                     boxShadow: "none",
                   },
-                  pointerEvents: "auto", // Ensure button is clickable
+                  pointerEvents: "auto",
                 }}
                 onClick={handleSubmit}
               >
@@ -310,5 +342,5 @@ const Payments = () => {
     </div>
   );
 };
-
+ 
 export default Payments;

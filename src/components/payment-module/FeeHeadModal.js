@@ -134,7 +134,6 @@ const FeeHeadModal = ({ showModal, setShowModal, feeHeads, addFeeItem }) => {
                                             </svg>
                                         </div>
                                         <div>{fee.name}
-                                            console.log({fee.name});
                                         </div>
                                         
                                     </div>

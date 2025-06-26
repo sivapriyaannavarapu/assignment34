@@ -64,7 +64,7 @@ const StudentInformation = () => {
 
                                             <div className="ms-2"> {/* changed from ms-3 to ms-2 */}
                                                 <h5 className="mb-0 fw-bold">Student Information</h5>
-                                                <small className="text-muted">
+                                                <small className="text-muted" style={{fontFamily: 'Inter, sans-serif', fontSize:'12px'}}>
                                                     Get All Student Details Regarding Fee Payment, And More...
                                                 </small>
                                             </div>

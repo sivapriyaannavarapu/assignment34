@@ -35,7 +35,7 @@ const Sidebar = () => {
               fontWeight: activeItem === 'Students' ? 700 : 400,
               fontSize: '14px',
               color: activeItem === 'Students' ? 'white' : '#595E6C',
- 
+
             }}
           >
             Students

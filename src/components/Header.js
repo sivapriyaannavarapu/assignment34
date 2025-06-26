@@ -3,19 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../assets/Logo.png';
 import Profile from '../assets/Profile.png';
 import { Box, InputAdornment } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 const Header = () => {
-  const values =
-  {
-    id: '1',
-    role: 'Cashier',
-  }
 
-  const navigate = useNavigate();
-
-  const routeToHomepage = () => {
-    navigate("/homepage");
-  }
   return (
     <div
       className="d-flex justify-content-between align-items-center border-bottom px-3"
@@ -23,12 +12,12 @@ const Header = () => {
     >
       {/* Left side: Logo and Search */}
       <div className="d-flex align-items-center" style={{ gap: '100px' }}>
-        <div className="fw-bold" onClick={() => routeToHomepage}>
+        <div className="fw-bold">
           <figure className="mb-0">
             <img
               src={logo}
               alt="Sri Chaitanya Educational Institutions"
-              style={{ height: '30px' }} 
+              style={{ height: '30px' }}  
             />
           </figure>
         </div>
@@ -109,8 +98,8 @@ const Header = () => {
           </figure>
           <div className='d-flex flex-row align-items-center'>
             <div className="d-flex flex-column align-items-start fw-semibold me-3">
-              <span style={{ color: '#344054', fontSize: '14px', fontWeight: 600 }}>HYD {values.id}</span>
-              <span style={{ color: '#676767', fontSize: '12px', fontWeight: 400 }}>{values.role}</span>
+              <span style={{ color: '#344054', fontSize: '14px', fontWeight: 600 }}>HYD 256789</span>
+              <span style={{ color: '#676767', fontSize: '12px', fontWeight: 400 }}>Cashier</span>
             </div>
             <div>
               <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">

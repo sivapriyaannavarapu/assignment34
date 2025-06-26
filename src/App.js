@@ -160,7 +160,7 @@ const queryClient = new QueryClient({
 
 function App() {
   const location = useLocation();
-  const isLoginPage = location.pathname === "/";
+  const isLoginPage = location.pathname === "/login";
 
   return (
     // Wrap the app with QueryClientProvider
@@ -186,7 +186,7 @@ function App() {
           </>
         )}
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
     </QueryClientProvider>

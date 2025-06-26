@@ -2,30 +2,30 @@
 import { useStudentMajorInfo } from "../../backend/queries";
 const TermProgressBar = ({ currentTerm = 1, amount = 10000, label = "Term" }) => {
 
-   const{data, isLoading, isError, error} = useStudentMajorInfo();
-      console.log(data);
+  //  const{data, isLoading, isError, error} = useStudentMajorInfo();
+  //     console.log(data);
   
-      if (isLoading) {
-      return <div className="container-fluid px-0 mt-4">Loading...</div>;
-    }
+  //     if (isLoading) {
+  //     return <div className="container-fluid px-0 mt-4">Loading...</div>;
+  //   }
   
-    // Handle error state
-    if (isError) {
-      return (
-        <div className="container-fluid px-0 mt-4">
-          Error: {error?.message || "Failed to load student profile"}
-        </div>
-      );
-    }
+  //   // Handle error state
+  //   if (isError) {
+  //     return (
+  //       <div className="container-fluid px-0 mt-4">
+  //         Error: {error?.message || "Failed to load student profile"}
+  //       </div>
+  //     );
+  //   }
   
-  //   Handle no data
-    if (!data) {
-      return (
-        <div className="container-fluid px-0 mt-4">
-          No student profile data available.
-        </div>
-      );
-    }
+  // //   Handle no data
+  //   if (!data) {
+  //     return (
+  //       <div className="container-fluid px-0 mt-4">
+  //         No student profile data available.
+  //       </div>
+  //     );
+  //   }
   const getColor = (index) => {
     if (index + 1 < currentTerm) return "#4CAF50"; // completed → green
     if (index + 1 === currentTerm) return "#E53935"; // active → red

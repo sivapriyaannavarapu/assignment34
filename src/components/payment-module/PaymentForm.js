@@ -235,7 +235,7 @@ const PaymentForm = ({
                   value={values.cheque_amount}
                   onChange={handleChange}
                   sx={{
-                    width: "80%",
+                    width: "87%",
                     borderRadius: "6px",
                     "& .MuiInputLabel-root": {
                       color: "#404040",
@@ -268,7 +268,7 @@ const PaymentForm = ({
                 value={values.pre_print_reciept_no}
                 onChange={handleChange}
                 sx={{
-                  width: "80%",
+                  width: "87%",
                   borderRadius: "6px",
                   "& .MuiInputLabel-root": {
                     color: "#404040",
