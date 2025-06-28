@@ -5,7 +5,8 @@ import { NavLink } from "react-router-dom";
 import { useStudentProfile } from "../backend/queries";
 import "../styles/student-profile-info.css";
 import {useStudentContext} from "./customHooks/StudentContext"
-
+import male from "../assets/male.jpg";
+import female from "../assets/female.jpg";
 const Studentprofile = () => {
 
     const {studentId} = useStudentContext();
@@ -34,6 +35,8 @@ const Studentprofile = () => {
         );
     }
 
+    const studentimg = data.gender === 'Male' ? male : data.gender === 'Female' ? female : studentImg;
+
     return (
         <div
             className="container-fluid student-profile"
@@ -55,7 +58,7 @@ const Studentprofile = () => {
                         <div className="d-flex align-items-center">
                             <div className="profile-image me-3">
                                 <img
-                                    src={studentImg}
+                                    src={studentimg}
                                     alt="Student"
                                     className="shadowed-profile-img rounded-circle"
                                 />
@@ -396,7 +399,7 @@ export default Studentprofile;
 //                         <nav>
 //                             <div className="d-flex gap-4 px-0 flex-wrap nav-links-wrapper">
 //                                 <NavLink
-//                                     to="/student/student-profile"
+//                                     to="/student"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -412,7 +415,7 @@ export default Studentprofile;
 //                                     Payments
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/transport"
+//                                     to="/transport"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -420,7 +423,7 @@ export default Studentprofile;
 //                                     Transport
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/academics"
+//                                     to="/academics"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -428,7 +431,7 @@ export default Studentprofile;
 //                                     Academics
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/alerts"
+//                                     to="/alerts"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -436,7 +439,7 @@ export default Studentprofile;
 //                                     Alerts
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/history"
+//                                     to="/history"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -444,7 +447,7 @@ export default Studentprofile;
 //                                     History
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/room-allotment"
+//                                     to="/room-allotment"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -452,7 +455,7 @@ export default Studentprofile;
 //                                     Room Allotment
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/issue-forms"
+//                                     to="/issue-forms"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }
@@ -460,7 +463,7 @@ export default Studentprofile;
 //                                     Issue Forms
 //                                 </NavLink>
 //                                 <NavLink
-//                                     to="/student/certificates"
+//                                     to="/certificates"
 //                                     className={({ isActive }) =>
 //                                         `custom-tab-link ${isActive ? 'active' : ''}`
 //                                     }

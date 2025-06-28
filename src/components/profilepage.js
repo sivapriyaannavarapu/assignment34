@@ -1,15 +1,15 @@
 import { Routes, Route, Outlet } from "react-router-dom";
-import Information from "./student-profile-module/Information";
+import Information from "./StudentModule/Information";
 // import Payments from "./Payments/Payments";
 import Studentprofile from "./student-profile-info";
 import "../styles/profilepage.css";
-import StudentInformation from "./student-profile-module/student-profile-main";
-import PaymentInformation from "./payment-module/payments-information";
-import Payments from "./payment-module/payments";
-import PaymentTabs from "./payment-module/paymentssubtab";
+import StudentInformation from "./StudentModule/student-profile-main";
+import PaymentInformation from "./PaymentModule/payments-information";
+import Payments from "./PaymentModule/payments";
+import PaymentTabs from "./PaymentModule/paymentssubtab";
 // import PaymentInformation from "./Payments/payment-information";
 
-const Screen = () => {
+const ProfilePage = () => {
   return (
     <main className="w-100">
       <div className="top">
@@ -47,4 +47,4 @@ const Screen = () => {
   );
 };
 
-export default Screen;
+export default ProfilePage;

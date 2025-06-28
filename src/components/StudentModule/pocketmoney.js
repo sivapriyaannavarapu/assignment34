@@ -78,7 +78,7 @@ const PocketMoney = ({ isOpen, onToggle }) => {
             {/* Content */}
             {isOpen && (
                 <div className="mt-4 px-2">
-                    <div className="row gy-3 border-top">
+                    <div className="row gy-3 border-top" style={{fontFamily: 'Inter, sans-serif' }}>
                         <div className="col-md-6">
                             <PocketItem label="Pocket Refund" value={data.pocketRefund || 'N/A'} />
                             <PocketItem label="Deposited Amount" value={data.depositedAmount || 'N/A'} />
@@ -164,7 +164,7 @@ const PocketMoney = ({ isOpen, onToggle }) => {
 
 // Reusable Pocket Info item
 const PocketItem = ({ label, value }) => (
-    <div className="d-flex justify-content-between align-items-center mb-2">
+    <div className="d-flex justify-content-between align-items-center mb-3">
         {/* Label */}
         <span
             style={{
@@ -280,7 +280,7 @@ export default PocketMoney;
 //             {/* Content */}
 //             {isOpen && (
 //                 <div className="mt-4 px-2">
-//                     <div className="row gy-3 border-top">
+//                     <div className="row gy-3 border-top" style={{fontFamily: 'Inter, sans-serif' }}>
 //                         <div className="col-md-6">
 //                             <PocketItem label="Pocket Refund" value={'N/A'} />
 //                             <PocketItem label="Deposited Amount" value={'N/A'} />
@@ -315,6 +315,7 @@ export default PocketMoney;
 //                                         bottom: "65px",
 //                                         right: "20px",
 //                                         textAlign: "right",
+                                       
 //                                     }}
 //                                 >
 //                                     <div style={{ fontSize: "0.75rem", opacity: 0.7 }}>Balance</div>
@@ -366,7 +367,7 @@ export default PocketMoney;
 
 // // Reusable Pocket Info item
 // const PocketItem = ({ label, value }) => (
-//     <div className="d-flex justify-content-between align-items-center mb-2">
+//     <div className="d-flex justify-content-between align-items-center mb-3">
 //         {/* Label */}
 //         <span
 //             style={{

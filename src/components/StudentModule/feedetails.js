@@ -69,7 +69,7 @@ const FeeDetails = ({ isOpen, onToggle }) => {
 
             {/* Expandable Content */}
             {isOpen && (
-                <div className="mt-4 px-2 fw-normal" style={{ color: "#9D9BA1", fontStyle: "normal" }}>
+                <div className="mt-4 px-2 fw-normal" style={{ color: "#9D9BA1", fontStyle: "normal", fontFamily: 'Inter, sans-serif'  }}>
                     <div className="row gy-3  ps-1 pe-1 border-top">
                         <div className="col-md-6">
                             <FeeItem label="Course Fee" value={data.courseFee || 'N/A'} />
@@ -93,7 +93,7 @@ const FeeDetails = ({ isOpen, onToggle }) => {
 };
 
 const FeeItem = ({ label, value }) => (
-    <div className="d-flex justify-content-between align-items-center mb-2">
+    <div className="d-flex justify-content-between align-items-center mb-3">
         {/* Label */}
         <span
             style={{
@@ -200,7 +200,7 @@ export default FeeDetails;
 
 //             {/* Expandable Content */}
 //             {isOpen && (
-//                 <div className="mt-4 px-2 fw-normal" style={{ color: "#9D9BA1", fontStyle: "normal" }}>
+//                 <div className="mt-4 px-2 fw-normal" style={{ color: "#9D9BA1", fontStyle: "normal", fontFamily: 'Inter, sans-serif'  }}>
 //                     <div className="row gy-3 ps-1 pe-1 border-top">
 //                         <div className="col-md-6">
 //                             <FeeItem label="Course Fee" value={'N/A'} />
@@ -224,7 +224,7 @@ export default FeeDetails;
 // };
 
 // const FeeItem = ({ label, value }) => (
-//     <div className="d-flex justify-content-between align-items-center mb-2">
+//     <div className="d-flex justify-content-between align-items-center mb-3">
 //         {/* Label */}
 //         <span
 //             style={{

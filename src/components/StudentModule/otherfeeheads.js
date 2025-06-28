@@ -66,7 +66,7 @@ const OtherFeeHeads = ({ isOpen, onToggle }) => {
 
             {/* Content */}
             {isOpen && (
-                <div className="mt-4 px-2 ps-4">
+                <div className="mt-4 px-2 ps-4" style={{  fontFamily: 'Inter, sans-serif' }}>
                     <div className="row">
                         {/* Left column */}
                         <div className="col-md-6 d-flex flex-column gap-2">
@@ -184,7 +184,7 @@ export default OtherFeeHeads;
 
 //             {/* Content */}
 //             {isOpen && (
-//                 <div className="mt-4 px-4">
+//                 <div className="mt-4 px-4" style={{  fontFamily: 'Inter, sans-serif' }}>
 //                     <div className="row">
 //                         {/* Left column */}
 //                         <div className="col-md-6 d-flex flex-column gap-2">

@@ -257,7 +257,7 @@ export default TransportDetails;
 //                         <div className="col-md-6" style={{ marginTop: "50px" }}>
 //                             <div className="row">
 //                                 {/* First Row: Academic Year & Transport Type */}
-//                                 <div className="col-md-6 d-flex gap-2">
+//                                 <div className="col-md-6 d-flex gap-2" style={{  fontFamily: 'Inter, sans-serif' }}>
 //                                     {/* Academic Year */}
 //                                     <div className="d-flex flex-column">
 //                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@ export default TransportDetails;
 //                                         </div>
 //                                     </div>
 //                                 </div>
-//                                 <div className="col-md-6 d-flex gap-3">
+//                                 <div className="col-md-6 d-flex gap-3" style={{  fontFamily: 'Inter, sans-serif' }}>
 //                                     {/* Transport Type */}
 //                                     <div className="d-flex flex-column">
 //                                         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -297,7 +297,7 @@ export default TransportDetails;
 //                                 </div>
 //                             </div>
 
-//                             <div className="row mt-4">
+//                             <div className="row mt-4" style={{  fontFamily: 'Inter, sans-serif' }}>
 //                                 {/* Second Row: Transport Status & Boarding Stage */}
 //                                 <div className="col-md-6 d-flex gap-3">
 //                                     {/* Transport Status */}

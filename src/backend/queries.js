@@ -1,6 +1,6 @@
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { useStudentContext } from '../components/customHooks/StudentContext';
-import { feeheads, studentMajorInfo, addPayment, studentProfile} from './apis'; 
+import { feeheads, studentMajorInfo, addPayment, studentProfile, studentHistory} from './apis'; 
 
 export const useFeeHeads = () => {
   const { data, isLoading, isError, error } = useQuery({
@@ -68,6 +68,20 @@ export const useDueTotal = () =>{
   });
 
   console.log('Due Amount:', data);
+
+  return { data, isLoading, isError, error };
+
+}
+
+export const useStudentHistory = () =>{
+  const {studentId} = useStudentContext();
+   const { data, isLoading, isError, error } = useQuery({
+    queryKey: ['studentHistory', studentId],
+    queryFn: () => studentHistory(studentId),
+    enabled: !!studentId, 
+  });
+
+  console.log('Student History:', data);
 
   return { data, isLoading, isError, error };
 

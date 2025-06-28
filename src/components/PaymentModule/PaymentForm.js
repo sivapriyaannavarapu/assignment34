@@ -11,6 +11,7 @@ import { Formik, Form, FieldArray } from 'formik';
 import * as Yup from 'yup';
 import FeeItem from './FeeItem';
 
+
 // Debug check for useRef and useContext
 if (!React.useRef) {
   console.error('React.useRef is not available. Check React import and version.');
@@ -253,13 +254,13 @@ const PaymentForm = ({
                   ))
                 ) : (
                   <Typography sx={{ mt: 2, color: 'gray' }}>
-                    No fee items added yet.
+                    {/* No fee items added yet. */}
                   </Typography>
                 )}
               </>
             )}
           </FieldArray>
-          <div className="row d-flex m-1 mt-3">
+          <div className="row d-flex m-1 mt-3" style={{width:'85%'}}>
             {paymentMode !== 'Cash' && (
               <div className="col-4">
                 <TextField
@@ -272,7 +273,7 @@ const PaymentForm = ({
                   error={touched.cheque_amount && !!errors.cheque_amount}
                   helperText={touched.cheque_amount && errors.cheque_amount}
                   sx={{
-                    width: '87%',
+                    width: '100%',
                     borderRadius: '6px',
                     '& .MuiInputLabel-root': {
                       color: '#404040',
@@ -296,7 +297,7 @@ const PaymentForm = ({
                 />
               </div>
             )}
-            <div className="col-4">
+            <div className="col-4" style={{width:"25%"}}>
               <TextField
                 name="pre_print_reciept_no"
                 label="Pre Print Receipt No"
@@ -307,7 +308,7 @@ const PaymentForm = ({
                 error={touched.pre_print_reciept_no && !!errors.pre_print_reciept_no}
                 helperText={touched.pre_print_reciept_no && errors.pre_print_reciept_no}
                 sx={{
-                  width: '87%',
+                  width: '100%',
                   borderRadius: '6px',
                   '& .MuiInputLabel-root': {
                     color: '#404040',
@@ -343,7 +344,7 @@ const PaymentForm = ({
                 error={touched.fee_payment_year && !!errors.fee_payment_year}
                 helperText={touched.fee_payment_year && errors.fee_payment_year}
                 sx={{
-                  width: '80%',
+                  width: '90%',
                   borderRadius: '6px',
                   '& .MuiInputLabel-root': {
                     color: '#404040',

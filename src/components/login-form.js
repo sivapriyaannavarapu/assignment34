@@ -60,7 +60,7 @@ function LoginRightSec() {
                             size="small"
                             sx={{
                                 "& .MuiInputBase-root": { fontSize: "15px", height: "50px" },
-                                "& .MuiInputLabel-root": { fontSize: "15px" }
+                                "& .MuiInputLabel-root": { fontSize: "18px",paddingTop:'3px' }
                             }}
                         />
                         <TextField
@@ -76,13 +76,13 @@ function LoginRightSec() {
                             type="password"
                             sx={{
                                 "& .MuiInputBase-root": { fontSize: "15px", height: "50px" },
-                                "& .MuiInputLabel-root": { fontSize: "15px" }
+                                "& .MuiInputLabel-root": { fontSize: "18px", paddingTop:'3px' }
                             }}
                         />
                         <Button
                             variant="contained"
                             size="small"
-                            sx={{ fontSize: "12px", padding: "8px 15px", minWidth: "80px", height: "50px", background: "#231CED" }}
+                            sx={{ fontSize: "20px",textTransform:'capitalize', padding: "8px 15px", minWidth: "80px", height: "50px", background: "#231CED" }}
                             type="submit"
                         >
                             Login

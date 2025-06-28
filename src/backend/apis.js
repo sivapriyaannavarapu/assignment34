@@ -40,3 +40,13 @@ export const dueAmount = async(studentId) =>{
     const result = await axios.get(`${API_BASE_URL}/getTotalDue?studentId=${studentId}`);
     return result;
 }
+
+export const studentHistory = async(studentId)=>{
+    try{
+        const response = await fetch(`${API_BASE_URL}/api/student?studentId=${studentId}`);
+        const result = await response.json();
+        return result;
+    }catch(error){
+        console.log(error);
+    }
+}

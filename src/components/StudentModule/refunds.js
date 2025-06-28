@@ -69,7 +69,7 @@ const Refunds = ({ isOpen, onToggle }) => {
 
             {/* Content */}
             {isOpen && (
-                <div className="mt-4 px-2">
+                <div className="mt-4 px-2" style={{  fontFamily: 'Inter, sans-serif' }}>
                     <RefundItem label="Akash Books" value={data.akash_books || 'N/A'} />
                     <RefundItem label="Bus Pass" value={data.bus_pss || 'N/A'} />
                     <RefundItem label="Caution Deposit" value={data.caution_deposite || 'N/A'} />
@@ -182,7 +182,7 @@ export default Refunds;
 
 //             {/* Content */}
 //             {isOpen && (
-//                 <div className="mt-4 px-2">
+//                 <div className="mt-4 px-2" style={{  fontFamily: 'Inter, sans-serif' }}>
 //                     <RefundItem label="Akash Books" value={'N/A'} />
 //                     <RefundItem label="Bus Pass" value={'N/A'} />
 //                     <RefundItem label="Caution Deposit" value={'N/A'} />

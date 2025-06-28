@@ -235,6 +235,7 @@ const Payments = () => {
 
       const result = await addPayment(studentId, payload);
       console.log('Payment added successfully:', result);
+      alert('Payment processed successfully!');
 
       setFeeItems([]);
       setAmount('');
@@ -325,21 +326,24 @@ const Payments = () => {
                 role="group"
                 style={{ height: '90%', borderRadius: '110px' }}
               >
-                {['Cash', 'DD', 'Cheque', 'Credit/Debit Card'].map((mode) => (
+                {["Cash", "DD", "Cheque", "Credit/Debit Card"].map((mode) => (
                   <button
                     key={mode}
                     type="button"
-                    className={`btn ${paymentMode === mode ? 'btn-primary' : ''}`}
+                    className="btn"
                     onClick={() => handlePaymentModeChange(mode)}
                     style={{
-                      padding: '7px 20px',
-                      borderRadius: '110px',
-                      border: 'none',
+                      padding: "7px 25px",
+                      borderRadius: "110px",
+                      border: "none",
+                      backgroundColor: paymentMode === mode ? "#3425FF" : "",  // your custom blue
+                      color: paymentMode === mode ? "#ffffff" : "#000000",
                     }}
                   >
                     {mode}
                   </button>
                 ))}
+
               </div>
             </div>
             <Box sx={{ width: '100px' }}>
@@ -352,11 +356,11 @@ const Payments = () => {
                     variant="determinate"
                     value={progress}
                     sx={{
-                      height: '10px',
+                      height: '7px',
                       borderRadius: 5,
                       backgroundColor: '#e0e0e0',
                       '& .MuiLinearProgress-bar': {
-                        backgroundColor: '#1E90FF',
+                        backgroundColor: '#3425FF',
                         borderRadius: '5px 0 0 5px',
                       },
                     }}
@@ -414,7 +418,7 @@ const Payments = () => {
               <Box textAlign="center" mt={5}>
                 <Button
                   variant="contained"
-                  sx={{ backgroundColor: '#3425FF', textTransform: 'capitalize' }}
+                  sx={{ backgroundColor: '#3425FF', textTransform: 'capitalize', marginTop: '0px' }}
                   endIcon={<ArrowForward />}
                   onClick={handleProceed}
                 >
@@ -435,6 +439,7 @@ const Payments = () => {
                   fontSize: '12px',
                   fontWeight: 600,
                   boxShadow: 'none',
+                  marginTop: '0',
                   '&:hover': {
                     boxShadow: 'none',
                   },
